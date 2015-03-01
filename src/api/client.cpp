@@ -136,6 +136,8 @@ Client::ItemRes Client::top_stories(const string& query) {
                 item.kids.emplace_back(kid.toUInt());
             result.items.emplace_back(item);
             item.time = data["time"].toULongLong();
+            if (data.contains("text"))
+                item.text = data["text"].toString().toStdString();
         }
     }
     return result;

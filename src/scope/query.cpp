@@ -85,6 +85,8 @@ void Query::run(sc::SearchReplyProxy const& reply) {
 
             res["author"] = ss.str();
             res["comments"] = item.comments_url;
+            if (!item.text.empty())
+                res["description"] = item.text;
             // Push the result
             if (!reply->push(res)) {
                 // If we fail to push, it means the query has been cancelled.
