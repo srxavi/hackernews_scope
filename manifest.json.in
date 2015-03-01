@@ -1,7 +1,7 @@
 {
     "architecture": "@CLICK_ARCH@",
     "description": "A simple Unity scope that accesses the network",
-    "framework": "ubuntu-core-15.04",
+    "framework": "ubuntu-sdk-14.10",
     "hooks": {
         "hackernews": {
             "apparmor": "hackernews.apparmor",
