@@ -1,0 +1,10 @@
+[ScopeConfig]
+_DisplayName=Hacker News
+_Description=This is a Hackernews scope
+Art=screenshot.png
+Author=Xavi Francisco
+Icon=icon.png
+
+[Appearance]
+PageHeader.Background=color:///#E64A19
+PageHeader.ForegroundColor=#ffffff

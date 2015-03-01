@@ -1,0 +1,15 @@
+{
+    "architecture": "@CLICK_ARCH@",
+    "description": "A simple Unity scope that accesses the network",
+    "framework": "ubuntu-core-15.04",
+    "hooks": {
+        "hackernews": {
+            "apparmor": "hackernews.apparmor",
+            "scope": "hackernews"
+        }
+    },
+    "maintainer": "Xavi Francisco <xavi.francisco@gmail.com>",
+    "name": "hackernews.srxavi",
+    "title": "hackernews",
+    "version": "0.1"
+}
