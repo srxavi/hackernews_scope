@@ -86,8 +86,9 @@ Client::Item Client::get_item(unsigned int id) {
         item.id = data["id"].toUInt();
         item.title = data["title"].toString().toStdString();
         item.url = data["url"].toString().toStdString();
+        item.comments_url = "https://news.ycombinator.com/item?id=" + data["id"].toString().toStdString();
         if (item.url.empty())
-                item.url = "htts://news.ycombinator.com/item?id=" + data["id"].toString().toStdString();
+                item.url = item.comments_url;
         item.by = data["by"].toString().toStdString();
         item.score = data["score"].toUInt();
         for (QVariant kid: data["kids"].toList())

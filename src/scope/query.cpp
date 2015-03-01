@@ -39,7 +39,8 @@ const static string STORY_TEMPLATE =
         },
         "components": {
             "title": "title",
-            "subtitle": "author"
+            "subtitle": "author",
+            "comments": "comments"
             }
         }
         )";
