@@ -12,7 +12,7 @@ struct Config {
     /*
      * The root of all API request URLs
      */
-    std::string apiroot { "https://hacker-news.firebaseio.com/v0/" };
+    std::string apiroot { "https://hn-ubuntu-scope.herokuapp.com" };
 
     /*
      * The custom HTTP user agent string for this library

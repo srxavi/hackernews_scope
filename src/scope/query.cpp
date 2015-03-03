@@ -39,8 +39,7 @@ const static string STORY_TEMPLATE =
         },
         "components": {
             "title": "title",
-            "subtitle": "author",
-            "comments": "comments"
+            "subtitle": "author"
             }
         }
         )";
@@ -67,26 +66,22 @@ void Query::run(sc::SearchReplyProxy const& reply) {
         // without mixing APIs and scopes code.
         // Add your code to retreive xml, json, or any other kind of result
         // in the client.
-        Client::ItemIdList item_res;
+        Client::ItemRes item_res;
         
         auto items_cat = reply->register_category("stories", "Top Stories", "", query, sc::CategoryRenderer(STORY_TEMPLATE));
-        item_res = client_.get_top_stories(query_string);
-
-        for (unsigned int item_id: item_res.items) {
+        item_res = client_.top_stories(query_string);
+        for (Client::Item item: item_res.items) {
             sc::CategorisedResult res(items_cat);
-            Client::Item item = client_.get_item(item_id);
-
             stringstream ss(stringstream::in | stringstream::out);
 
-            ss << QString::number(item.score).toStdString() << " points by " << item.by << " | " << QString::number(item.kids.size()).toStdString() << " comments";
+            ss << QString::number(item.score).toStdString() << " points by " << item.by << " | " << QString::number(item.comments_count).toStdString() << " comments";
 
             res.set_uri(item.url);
             res.set_title(item.title);
 
             res["author"] = ss.str();
             res["comments"] = item.comments_url;
-            if (!item.text.empty())
-                res["description"] = item.text;
+            res["description"] = item.text;
             // Push the result
             if (!reply->push(res)) {
                 // If we fail to push, it means the query has been cancelled.

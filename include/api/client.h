@@ -40,6 +40,7 @@ public:
         std::string url;
         std::string original_url;
         std::string comments_url;
+        unsigned int comments_count;
         unsigned int score;
         std::string title;
         std::deque<unsigned int> parts;
@@ -78,10 +79,6 @@ public:
      * Get the top Hacker news storires
      */
     virtual ItemRes top_stories(const std::string &query);
-
-    virtual ItemIdList get_top_stories(const std::string &query);
-
-    virtual Item get_item(unsigned int id);
 
     /**
      * Get the comments for an Item

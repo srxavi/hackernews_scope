@@ -59,9 +59,9 @@ void Preview::run(sc::PreviewReplyProxy const& reply) {
     // image.add_attribute_mapping("source", "art");
 
     // Define the summary section
-    sc::PreviewWidget description("summary", "text");
+    sc::PreviewWidget summary("summary", "text");
     // It has a text property, mapped to the result's description property
-    description.add_attribute_mapping("text", "description");
+    summary.add_attribute_value("text", result["description"]);
 
     // Define the actions section
     sc::PreviewWidget w_actions("actions", "actions");
@@ -80,6 +80,6 @@ void Preview::run(sc::PreviewReplyProxy const& reply) {
     });
     w_actions.add_attribute_value("actions", builder.end());
     // Push each of the sections
-    reply->push( { header, description, w_actions,});
+    reply->push( { header, summary, w_actions,});
 }
 
