@@ -1,6 +1,6 @@
 {
     "architecture": "@CLICK_ARCH@",
-    "description": "A simple Unity scope that accesses the network",
+    "description": "An unofficial scope for Hacker News' top stories",
     "framework": "ubuntu-sdk-14.10",
     "hooks": {
         "hackernews": {
@@ -10,6 +10,6 @@
     },
     "maintainer": "Xavi Francisco <xavi.francisco@gmail.com>",
     "name": "hackernews.srxavi",
-    "title": "hackernews",
+    "title": "Hacker News Scope",
     "version": "0.1"
 }
